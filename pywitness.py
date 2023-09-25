@@ -66,7 +66,7 @@ def _log(message, level="info"):
         print(f"{color}{prefix}{message}{endc}")
 
 def _check(ip, port, timeout, verbose):
-    url = f"http://{ip}:{port}"
+    url = f"http://{ip}:{port}" # assuming http + port 443 works as https
     if verbose:
         _log(message=f"checking {url}", level="debug")
     try:
