@@ -9,8 +9,6 @@ from itertools import product
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from dataclasses import dataclass, field
-from ipaddress import ip_address
-
 
 ''' given an IP range, check if there's a web interface siting on each IP, and if so make a screenshot
     The aim is to find web interfaces of IT assets
@@ -46,6 +44,7 @@ def main():
     parser.add_argument("-t", "--timeout", default=10, help="how long should we wait for the server response ?")
     parser.add_argument("-v", "--verbose", default=False, action="store_true", help="more output to console")
     parser.add_argument("-s", "--screenshot", default=False, action="store_true", help="take screenshots of found urls with headless chrome and selenium framework")
+    parser.add_argument("-c", "--chromedriver", default="", help="path to chrome driver exe")
     args = parser.parse_args()
 
     ips = [str(ip) for ip in ipaddress.IPv4Network(args.ip)]
@@ -61,7 +60,7 @@ def main():
         options.add_argument('--headless')
         #driver = webdriver.Chrome(options=options)
         # https://chromedriver.chromium.org/downloads
-        driver = webdriver.Chrome("c:\\Users\\mszat\\Downloads\\chromedriver-win64\\chromedriver.exe", options=options)
+        driver = webdriver.Chrome(args.chromedriver, options=options)
         driver.maximize_window()
         #driver = webdriver.Edge()
 

@@ -8,6 +8,8 @@ The screenshots can then be manually checked to figure out any targets for furth
 
 currently Chrome is default browser that the tool uses.
 
+!! chrome driver is required https://chromedriver.chromium.org/downloads !!
+
 TODO:
 - add support for firefox
 - add support for edge 
@@ -15,7 +17,7 @@ TODO:
 
 
 $ python3 .\pywitness.py -h
-usage: ProgramName [-h] [--pool POOL] [-p PORTS] -i IP [-t TIMEOUT] [-v] [-s]
+usage: ProgramName [-h] [--pool POOL] [-p PORTS] -i IP [-t TIMEOUT] [-v] [-s] [-c CHROMEDRIVER]
 
 What the program does
 
@@ -29,6 +31,8 @@ options:
                         how long should we wait for the server response ?
   -v, --verbose         more output to console
   -s, --screenshot      take screenshots of found urls with headless chrome and selenium framework
+  -c CHROMEDRIVER, --chromedriver CHROMEDRIVER
+                        path to chrome driver exe
 
 example:
-    python3 .\pywitness.py --ports="80,8080" --ip=192.168.0.0/29 --pool=10 --timeout=2 --verbose --screenshot
+    python3 .\pywitness.py --ports="80,8080" --ip=192.168.0.0/29 --pool=10 --timeout=2 --verbose --screenshot --chromedriver=C:\\path_to\\chromedriver.exe
