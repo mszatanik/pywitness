@@ -1,0 +1,49 @@
+@font-face {  
+    src: url(PixelifySans-SemiBold.ttf) format("truetype");
+    font-family: PixelifySans-SemiBold;
+}
+@font-face {  
+    src: url(Roboto-Light.ttf) format("truetype");
+    font-family: Roboto-Light;
+}
+body {
+    width:1024px;
+    margin:0 auto;
+    padding: 0 25px;
+    background: whitesmoke;
+    font-family: Roboto-Light, Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+#top{
+    text-align: center;
+    margin:25px 0;
+    font-size: 2em;
+    font-family: PixelifySans-SemiBold, sans-serif;
+    font-weight: bold;
+}
+#results{
+    width: 100%;
+    background: darkgrey;
+}
+.float {
+    float:inline-start;
+}
+.thumbnail img{
+    height:256px;
+}
+.result{
+    border-bottom: 1px solid gray;
+    border-top: 1px solid lightgrey;
+    height:256px;
+    padding: 10px 0;
+}
+.result:first-of-type{
+    border-top: none;
+}
+.result .info li{
+    list-style-type: none
+}
+bold
+{
+    font-weight: 600;
+}
